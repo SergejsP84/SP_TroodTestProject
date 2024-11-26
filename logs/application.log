@@ -1,0 +1,225 @@
+2024-11-25 21:38:19 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 21:38:19 - Starting SpTroodTestProjectApplicationKt using Java 21.0.1 with PID 15660 (C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes started by bossl in C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject)
+2024-11-25 21:38:19 - No active profile set, falling back to 1 default profile: "default"
+2024-11-25 21:38:19 - Using Docker Compose file 'C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\compose.yaml'
+2024-11-25 21:38:22 - There are already Docker Compose services running, skipping startup
+2024-11-25 21:38:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 21:38:23 - Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
+2024-11-25 21:38:25 - Tomcat initialized with port 8080 (http)
+2024-11-25 21:38:25 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-25 21:38:25 - Starting service [Tomcat]
+2024-11-25 21:38:25 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-25 21:38:25 - Initializing Spring embedded WebApplicationContext
+2024-11-25 21:38:25 - Root WebApplicationContext: initialization completed in 2631 ms
+2024-11-25 21:38:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 21:38:25 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 21:38:25 - HHH000026: Second-level cache disabled
+2024-11-25 21:38:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 21:38:26 - HikariPool-1 - Starting...
+2024-11-25 21:38:26 - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@347123dc
+2024-11-25 21:38:26 - HikariPool-1 - Start completed.
+2024-11-25 21:38:28 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 21:38:28 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:38:29 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'avatarController' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\domain\controller\AvatarController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\ProfileService.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'avatarService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\AvatarService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-25 21:38:29 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:38:29 - HikariPool-1 - Shutdown initiated...
+2024-11-25 21:38:29 - HikariPool-1 - Shutdown completed.
+2024-11-25 21:38:29 - Stopping service [Tomcat]
+2024-11-25 21:38:29 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-25 21:38:29 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.sptest.project_SP_TroodTest.service.implementation.AvatarService required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-11-25 21:54:16 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 21:54:16 - Starting SpTroodTestProjectApplicationKt using Java 21.0.1 with PID 2988 (C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes started by bossl in C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject)
+2024-11-25 21:54:16 - No active profile set, falling back to 1 default profile: "default"
+2024-11-25 21:54:16 - Using Docker Compose file 'C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\compose.yaml'
+2024-11-25 21:54:19 - There are already Docker Compose services running, skipping startup
+2024-11-25 21:54:20 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 21:54:20 - Finished Spring Data repository scanning in 124 ms. Found 2 JPA repository interfaces.
+2024-11-25 21:54:21 - Tomcat initialized with port 8080 (http)
+2024-11-25 21:54:21 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-25 21:54:21 - Starting service [Tomcat]
+2024-11-25 21:54:21 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-25 21:54:21 - Initializing Spring embedded WebApplicationContext
+2024-11-25 21:54:21 - Root WebApplicationContext: initialization completed in 2731 ms
+2024-11-25 21:54:22 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 21:54:22 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 21:54:22 - HHH000026: Second-level cache disabled
+2024-11-25 21:54:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 21:54:23 - HikariPool-1 - Starting...
+2024-11-25 21:54:23 - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@5ba184fc
+2024-11-25 21:54:23 - HikariPool-1 - Start completed.
+2024-11-25 21:54:24 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 21:54:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:54:25 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'avatarController' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\domain\controller\AvatarController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\ProfileService.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'avatarService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\AvatarService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-25 21:54:25 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:54:25 - HikariPool-1 - Shutdown initiated...
+2024-11-25 21:54:25 - HikariPool-1 - Shutdown completed.
+2024-11-25 21:54:25 - Stopping service [Tomcat]
+2024-11-25 21:54:25 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-25 21:54:26 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.sptest.project_SP_TroodTest.service.implementation.AvatarService required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-11-25 21:58:28 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 21:58:28 - Starting SpTroodTestProjectApplicationKt using Java 21.0.1 with PID 5964 (C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes started by bossl in C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject)
+2024-11-25 21:58:28 - No active profile set, falling back to 1 default profile: "default"
+2024-11-25 21:58:28 - Using Docker Compose file 'C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\compose.yaml'
+2024-11-25 21:58:31 - There are already Docker Compose services running, skipping startup
+2024-11-25 21:58:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 21:58:33 - Finished Spring Data repository scanning in 106 ms. Found 2 JPA repository interfaces.
+2024-11-25 21:58:34 - Tomcat initialized with port 8080 (http)
+2024-11-25 21:58:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-25 21:58:34 - Starting service [Tomcat]
+2024-11-25 21:58:34 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-25 21:58:34 - Initializing Spring embedded WebApplicationContext
+2024-11-25 21:58:34 - Root WebApplicationContext: initialization completed in 2788 ms
+2024-11-25 21:58:34 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 21:58:34 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 21:58:35 - HHH000026: Second-level cache disabled
+2024-11-25 21:58:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 21:58:35 - HikariPool-1 - Starting...
+2024-11-25 21:58:35 - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3e2d8623
+2024-11-25 21:58:35 - HikariPool-1 - Start completed.
+2024-11-25 21:58:37 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 21:58:37 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:58:38 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'avatarController' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\domain\controller\AvatarController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\ProfileService.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'avatarService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\AvatarService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-25 21:58:38 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 21:58:38 - HikariPool-1 - Shutdown initiated...
+2024-11-25 21:58:38 - HikariPool-1 - Shutdown completed.
+2024-11-25 21:58:38 - Stopping service [Tomcat]
+2024-11-25 21:58:38 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-25 21:58:38 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.sptest.project_SP_TroodTest.service.implementation.AvatarService required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-11-25 22:00:46 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 22:00:46 - Starting SpTroodTestProjectApplicationKt using Java 21.0.1 with PID 15148 (C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes started by bossl in C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject)
+2024-11-25 22:00:46 - No active profile set, falling back to 1 default profile: "default"
+2024-11-25 22:00:46 - Using Docker Compose file 'C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\compose.yaml'
+2024-11-25 22:00:49 - There are already Docker Compose services running, skipping startup
+2024-11-25 22:00:50 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 22:00:50 - Finished Spring Data repository scanning in 121 ms. Found 2 JPA repository interfaces.
+2024-11-25 22:00:51 - Tomcat initialized with port 8080 (http)
+2024-11-25 22:00:51 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-25 22:00:51 - Starting service [Tomcat]
+2024-11-25 22:00:51 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-25 22:00:51 - Initializing Spring embedded WebApplicationContext
+2024-11-25 22:00:51 - Root WebApplicationContext: initialization completed in 2626 ms
+2024-11-25 22:00:52 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 22:00:52 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 22:00:52 - HHH000026: Second-level cache disabled
+2024-11-25 22:00:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 22:00:53 - HikariPool-1 - Starting...
+2024-11-25 22:00:53 - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@405d8a80
+2024-11-25 22:00:53 - HikariPool-1 - Start completed.
+2024-11-25 22:00:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 22:00:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 22:00:55 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'avatarController' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\domain\controller\AvatarController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\ProfileService.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'avatarService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\AvatarService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-25 22:00:55 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 22:00:55 - HikariPool-1 - Shutdown initiated...
+2024-11-25 22:00:55 - HikariPool-1 - Shutdown completed.
+2024-11-25 22:00:55 - Stopping service [Tomcat]
+2024-11-25 22:00:55 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-25 22:00:55 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.sptest.project_SP_TroodTest.service.implementation.AvatarService required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-11-25 22:09:18 - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-25 22:09:19 - Starting SpTroodTestProjectApplicationKt using Java 21.0.1 with PID 3056 (C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes started by bossl in C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject)
+2024-11-25 22:09:19 - No active profile set, falling back to 1 default profile: "default"
+2024-11-25 22:09:19 - Using Docker Compose file 'C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\compose.yaml'
+2024-11-25 22:09:22 - There are already Docker Compose services running, skipping startup
+2024-11-25 22:09:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-25 22:09:23 - Finished Spring Data repository scanning in 266 ms. Found 2 JPA repository interfaces.
+2024-11-25 22:09:25 - Tomcat initialized with port 8080 (http)
+2024-11-25 22:09:25 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-25 22:09:25 - Starting service [Tomcat]
+2024-11-25 22:09:25 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-11-25 22:09:25 - Initializing Spring embedded WebApplicationContext
+2024-11-25 22:09:25 - Root WebApplicationContext: initialization completed in 2985 ms
+2024-11-25 22:09:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-25 22:09:25 - HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-25 22:09:25 - HHH000026: Second-level cache disabled
+2024-11-25 22:09:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-25 22:09:26 - HikariPool-1 - Starting...
+2024-11-25 22:09:26 - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@29892a77
+2024-11-25 22:09:26 - HikariPool-1 - Start completed.
+2024-11-25 22:09:27 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-25 22:09:27 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 22:09:29 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'avatarController' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\domain\controller\AvatarController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'profileService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\ProfileService.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'avatarService' defined in file [C:\Users\bossl\Desktop\Java\TroodTestAssignment\SP_TroodTestProject\target\classes\com\sptest\project_SP_TroodTest\service\implementation\AvatarService.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-11-25 22:09:29 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-25 22:09:29 - HikariPool-1 - Shutdown initiated...
+2024-11-25 22:09:29 - HikariPool-1 - Shutdown completed.
+2024-11-25 22:09:29 - Stopping service [Tomcat]
+2024-11-25 22:09:29 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-11-25 22:09:29 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.sptest.project_SP_TroodTest.service.implementation.AvatarService required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
