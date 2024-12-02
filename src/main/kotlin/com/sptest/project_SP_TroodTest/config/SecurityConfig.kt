@@ -1,22 +1,27 @@
-package com.sptest.project_SP_TroodTest.domain.config
+package com.sptest.project_SP_TroodTest.config
 
+import com.sptest.project_SP_TroodTest.util.CustomUserDetailsService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+import org.springframework.security.core.authority.SimpleGrantedAuthority
+import org.springframework.security.core.userdetails.User
+import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.header.writers.XXssProtectionHeaderWriter
 
 @Configuration
 @EnableWebSecurity
-class SecurityConfig {
+class SecurityConfig(private val customUserDetailsService: CustomUserDetailsService) {
 
     @Bean
     fun passwordEncoder(): BCryptPasswordEncoder {
         return BCryptPasswordEncoder()
     }
+
 
     @Bean
     fun securityFilterChain(http: HttpSecurity): SecurityFilterChain {
@@ -39,10 +44,10 @@ class SecurityConfig {
                 requests
                     .requestMatchers("/profile/signup").permitAll()
                     .requestMatchers("/profile/{userId}").permitAll()
-                    .requestMatchers("/profile/{userId}/update").permitAll()
-                    .requestMatchers("/upload-avatar/{userId}").permitAll()
+                    .requestMatchers("/profile/{userId}/update").authenticated()
+                    .requestMatchers("/upload-avatar/{userId}").authenticated()
                     .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**").permitAll() // Swagger
-                    .anyRequest().authenticated() // All other endpoints require auth
+                    .anyRequest().authenticated()
             }
 
             // Basic HTTP authentication (add JWT or other mechanisms as needed)

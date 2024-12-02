@@ -8,10 +8,12 @@ import com.sptest.project_SP_TroodTest.domain.enums.ProfileVisibility
 import com.sptest.project_SP_TroodTest.domain.mappers.ProfileMapper
 import com.sptest.project_SP_TroodTest.exceptions.InvalidFieldException
 import com.sptest.project_SP_TroodTest.exceptions.ProfileNotFoundException
+import com.sptest.project_SP_TroodTest.exceptions.UnauthorizedAccessException
 import com.sptest.project_SP_TroodTest.repository.InterestEntryRepository
 import com.sptest.project_SP_TroodTest.repository.ProfileRepository
 import com.sptest.project_SP_TroodTest.service.interfaces.ProfileServiceInterface
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
@@ -25,26 +27,42 @@ class ProfileService(
 ) : ProfileServiceInterface {
 
     // Retrieve a user profile by ID
-    override fun getProfile(userId: Long): ProfileDTO {
+    override fun getProfile(userId: Long, authentication: Authentication?): ProfileDTO {
         val profile = profileRepository.findById(userId).orElseThrow {
             ProfileNotFoundException(userId)
         }
+
+        // If the profile is private and the user is not the owner or the Admin, throw an exception
+        if (profile.isPublic == ProfileVisibility.PRIVATE) {
+            if (authentication == null ||
+                (authentication.name != profile.login && authentication.authorities.none { it.authority == "ROLE_ADMIN" })) {
+                throw UnauthorizedAccessException("Access to private profile is denied")
+            }
+        }
+
+        // Return profile as DTO
         return ProfileMapper().run { profile.toDTO() }
     }
 
     // Update the user profile with new data
     @Transactional
-    override fun updateProfile(userId: Long, profileDTO: ProfileDTO): ProfileDTO {
+    override fun updateProfile(userId: Long, profileDTO: ProfileDTO, authentication: Authentication): ProfileDTO {
         val profile = profileRepository.findById(userId).orElseThrow {
             ProfileNotFoundException(userId)
         }
 
+        // Get the logged-in user's login (Principal)
+        val loggedInUsername = authentication.name
+
+        // Check if the logged-in user is either the profile owner or an admin
+        if (loggedInUsername != profile.login && loggedInUsername != "admin") {
+            throw UnauthorizedAccessException("You do not have permission to update this profile.")
+        }
+
         // Define censored roots
         val censoredRoots = listOf("fuck", "shit")
-
         // Temporary list for updated InterestEntry objects
         val updatedInterests = processInterests(profileDTO.interests, censoredRoots)
-
         // Validate fields
         validateProfileFields(profileDTO)
 
@@ -63,8 +81,8 @@ class ProfileService(
 
         // Return the updated profile in DTO form
         return ProfileMapper().run { profile.toDTO() }
-
     }
+
 
 
     @Transactional
@@ -118,13 +136,16 @@ class ProfileService(
 
     // Handle the avatar upload and save the URL
     @Transactional
-    override fun uploadAvatar(userId: Long, file: MultipartFile): String {
-        val fileUrl = avatarService.uploadAvatar(userId, file)
+    override fun uploadAvatar(userId: Long, file: MultipartFile, authentication: Authentication): String {
+        // Call the avatar service with authentication and pass the userId and file
+        val fileUrl = avatarService.uploadAvatar(userId, file, authentication)
 
+        // Find the profile from the repository
         val profile = profileRepository.findById(userId).orElseThrow {
             RuntimeException("Profile not found for user id $userId")
         }
 
+        // Update avatar URL in the profile
         profile.avatarUrl = fileUrl
         profileRepository.save(profile)
 

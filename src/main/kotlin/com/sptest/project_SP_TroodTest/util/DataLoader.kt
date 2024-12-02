@@ -56,7 +56,7 @@ class DataLoader(
                 address = "123 South Park St.",
                 jobTitle = "Team Lead",
                 interests = mutableListOf(politics, sports, videoGames, music),
-                isPublic = ProfileVisibility.PRIVATE,
+                isPublic = ProfileVisibility.PUBLIC, // MADE PUBLIC FOR TEST PURPOSES
                 profileLink = "https://en.wikipedia.org/wiki/Kenny_McCormick",
                 avatarUrl = kennyAvatarUrl,
                 login = "kenny",
@@ -70,7 +70,7 @@ class DataLoader(
                 address = "456 South Park St.",
                 jobTitle = "Tax Inspector",
                 interests = mutableListOf(comedy, politics, sports),
-                isPublic = ProfileVisibility.PUBLIC, // MADE PUBLIC FOR TEST PIRPOSES
+                isPublic = ProfileVisibility.PUBLIC, // MADE PUBLIC FOR TEST PURPOSES
                 profileLink = "https://en.wikipedia.org/wiki/Eric_Cartman",
                 avatarUrl = cartmanAvatarUrl,
                 login = "eric",

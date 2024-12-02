@@ -1,9 +1,12 @@
-package com.sptest.project_SP_TroodTest.domain.controller
+package com.sptest.project_SP_TroodTest.controller
 
+import com.sptest.project_SP_TroodTest.annotations.UploadAvatarSwagger
 import com.sptest.project_SP_TroodTest.exceptions.ProfileNotFoundException
+import com.sptest.project_SP_TroodTest.exceptions.UnauthorizedAccessException
 import com.sptest.project_SP_TroodTest.service.implementation.ProfileService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.core.Authentication
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
 
@@ -16,8 +19,13 @@ class AvatarController(private val profileService: ProfileService) {
         val ALLOWED_MIME_TYPES = listOf("image/jpeg", "image/png")
     }
 
+    @UploadAvatarSwagger.UploadAvatar
     @PostMapping("/{userId}")
-    fun uploadAvatar(@PathVariable userId: Long, @RequestParam("file") file: MultipartFile): ResponseEntity<String> {
+    fun uploadAvatar(
+        @PathVariable userId: Long,
+        @RequestParam("file") file: MultipartFile,
+        authentication: Authentication
+    ): ResponseEntity<String> {
         return try {
             // Validate file size
             if (file.size > MAX_FILE_SIZE) {
@@ -31,9 +39,13 @@ class AvatarController(private val profileService: ProfileService) {
                     .body("Unsupported file type. Only .jpg, .jpeg, and .png are allowed.")
             }
 
-            // Call service to handle file saving
-            val avatarUrl = profileService.uploadAvatar(userId, file)
-            ResponseEntity.ok(avatarUrl)
+            // Call service to handle file saving with authentication object
+            val avatarUrl = profileService.uploadAvatar(userId, file, authentication)
+            ResponseEntity.ok(avatarUrl) // Return URL of the uploaded avatar
+        } catch (e: UnauthorizedAccessException) {
+            // Handle UnauthorizedAccessException
+            ResponseEntity.status(HttpStatus.FORBIDDEN)
+                .body("You do not have permission to upload an avatar for this profile.")
         } catch (e: ProfileNotFoundException) {
             ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("Profile not found for user ID: $userId")
